@@ -1,0 +1,34 @@
+{
+    "tasks": [
+        {"id": 1,
+        "title": "Plumbing Request",
+        "description": "Bathtub is not filling up. Need plumbing assistance ASAP",
+        "creation_date": "2022-12-01",
+        "stage": "Service Planned",
+        "last_modified": "2023-03-14",
+        "modified_by": "Facility Manager",
+        "facility": "Apartment 103"
+        },
+        {"id": 2,
+        "title": "Broken window",
+        "description": "A window in the appartment has a scratch. Need to find a repacement",
+        "creation_date": "2022-12-15",
+        "stage": "Replacement Ordered",
+        "last_modified": "2023-03-15",
+        "modified_by": "Procurement Manager",
+        "facility": "Apartment 203"
+        },
+        {"id": 3,
+        "title": "Fire alarm beeping",
+        "description": "The customer is saying that the fire alarm is beeping.",
+        "creation_date": "2022-03-16",
+        "stage": "New Request",
+        "last_modified": "2023-03-16",
+        "modified_by": "Facility Manager",
+        "facility": "Apartment 214"
+        }
+        
+        
+    ]
+    
+}
