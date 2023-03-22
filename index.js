@@ -35,6 +35,7 @@ const port = process.env.PORT || 3000
 app.get('/tasks', (req, res) => {
   const domain = req.query.domainName
   const api_key = req.query.api_key
+  console.log("dn is " + domain + ' key is ' + api_key)
   if(domain == 'demo' && api_key == "123456"){
     res.send(tasks)
   } else {
