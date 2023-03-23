@@ -59,6 +59,18 @@
         "stage": "In progress",
         "facility": "Apartment 204",
         "modified_by": "Hannah Martin"
+      },
+      {
+        "id": 1219,
+        "creatio_id": "64c1e783-6566-4dcb-8b42-0f686a179a15",
+        "title": "Landscape courtyard",
+        "description": "Design and implement a low-maintenance landscaping plan for the building's courtyard area.",
+        "creation_date": "2023-03-02",
+        "last_modified": "2023-03-12",
+        "created_by": "John Smith",
+        "stage": "In progress",
+        "facility": "Apartment 204",
+        "modified_by": "Jane Doe"
       }
     ]
   }
