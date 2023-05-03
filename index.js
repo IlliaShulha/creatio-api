@@ -127,8 +127,8 @@ app.post('/add_task', (req, res) => {
 
   // Extract the task object from the request body
   const newTask = req.body.newTask;
-
-  res.send(formatTask(newTask[0]))
+  sendDataToWebhook(formatTask(newTask[0])) 
+  res.send(200)
 
   /*
 
@@ -194,6 +194,13 @@ function formatTask(inputTask) {
 }
 
 
+
+app.post('/uploadTasks', (req, res) => {
+
+  sendDataToWebhook(tasks) 
+  res.send(200)
+
+})
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
