@@ -173,6 +173,7 @@ function formatTask(inputTask) {
   const domain = "demo"; // Replace with your constant value
 
   return {
+    "ContentType": "Facility Management",
     "createdTask": {
       "Prengi ID": prengiID,
       "Creatio ID": creatioID,
