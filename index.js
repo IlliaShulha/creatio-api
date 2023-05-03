@@ -28,6 +28,22 @@ const workflows = {
   ]
 }
 
+const facilities = {
+  "facilities":[
+    {
+      "Name": "Electricity",
+      "PrengiFacilityID": 108
+    },
+    {
+      "Name": "Elevators",
+      "PrengiFacilityID": 109
+    },{
+      "Name": "Maintenance",
+      "PrengiFacilityID": 100
+    }
+  ]
+}
+
 const newTask = {
     
     "Prengi ID": 1773,
@@ -83,6 +99,20 @@ app.get('/workflows', (req, res) => {
   }
   
 });
+
+app.get('/facilities', (req, res) => {
+  const domain = req.query.domainName
+  const api_key = req.query.api_key
+  console.log("dn is " + domain + ' key is ' + api_key)
+  if(domain == 'demo' && api_key == "123456"){
+    res.send(facilities)
+  } else {
+    res.send(null)
+  }
+  
+});
+
+
 
 app.post('/add_task', (req, res) => {
 
