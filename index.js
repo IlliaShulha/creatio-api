@@ -197,8 +197,9 @@ function formatTask(inputTask) {
 
 app.get('/uploadTasks', (req, res) => {
 
-  sendDataToWebhook(tasks) 
-  res.send(200)
+  console.log(sendDataToWebhook(tasks).message) 
+
+  res.sendStatus(200)
 
 })
 
