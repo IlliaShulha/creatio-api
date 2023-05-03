@@ -10,7 +10,11 @@
         "created_by": "John Smith",
         "stage": "In progress",
         "facility": "Apartment 204",
-        "modified_by": "Jane Doe"
+        "modified_by": "Jane Doe",
+        "Workflow": "Electricity",
+        "Department": "Maintenance department",
+        "User Executor": "Illia Shulha",
+        "Domain": "demo"
       },
       {
         "id": 1345,
@@ -22,7 +26,11 @@
         "created_by": "Alice Johnson",
         "stage": "Completed",
         "facility": "Apartment 204",
-        "modified_by": "Bob Anderson"
+        "modified_by": "Bob Anderson",
+        "Workflow": "Electricity",
+        "Department": "Maintenance department",
+        "User Executor": "Illia Shulha",
+        "Domain": "demo"
       },
       {
         "id": 1478,
@@ -34,7 +42,11 @@
         "created_by": "Charles Brown",
         "stage": "Pending",
         "facility": "Apartment 204",
-        "modified_by": "Diana Evans"
+        "modified_by": "Diana Evans",
+        "Workflow": "Electricity",
+        "Department": "Maintenance department",
+        "User Executor": "Illia Shulha",
+        "Domain": "demo"
       },
       {
         "id": 1503,
@@ -46,7 +58,11 @@
         "created_by": "Edward Gomez",
         "stage": "Scheduled",
         "facility": "Apartment 204",
-        "modified_by": "Fiona Hernandez"
+        "modified_by": "Fiona Hernandez",
+        "Workflow": "Electricity",
+        "Department": "Maintenance department",
+        "User Executor": "Illia Shulha",
+        "Domain": "demo"
       },
       {
         "id": 1689,
@@ -58,7 +74,11 @@
         "created_by": "George Lee",
         "stage": "In progress",
         "facility": "Apartment 204",
-        "modified_by": "Hannah Martin"
+        "modified_by": "Hannah Martin",
+        "Workflow": "Electricity",
+        "Department": "Maintenance department",
+        "User Executor": "Illia Shulha",
+        "Domain": "demo"
       },
       {
         "id": 1219,
@@ -70,7 +90,11 @@
         "created_by": "John Smith",
         "stage": "In progress",
         "facility": "Apartment 204",
-        "modified_by": "Jane Doe"
+        "modified_by": "Jane Doe",
+        "Workflow": "Electricity",
+        "Department": "Maintenance department",
+        "User Executor": "Illia Shulha",
+        "Domain": "demo"
       }
     ]
   }

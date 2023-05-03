@@ -1,4 +1,5 @@
 const express = require('express');
+const axios = require('axios');
 const cors = require('cors');
 const fs = require('fs');
 const bodyParser = require('body-parser');
@@ -11,6 +12,22 @@ const app = express();
 const tasksData = fs.readFileSync('tasksData.json');
 const tasks = JSON.parse(tasksData);
 
+const workflows = {
+  "workflows":[
+    {
+      "Name": "Electricity",
+      "PrengiWorkflowID": 108
+    },
+    {
+      "Name": "Elevators",
+      "PrengiWorkflowID": 109
+    },{
+      "Name": "Maintenance",
+      "PrengiWorkflowID": 100
+    }
+  ]
+}
+
 const newTask = {
   "Prengi ID": 1773,
   "Creatio ID": "64c1e783-6566-4dcb-8b42-0f686a179a15",
@@ -21,7 +38,11 @@ const newTask = {
   "User created": "Isaac Newton",
   "Stage": "Planning",
   "Facility": "Apartment 204",
-  "Modified By": "Julia Roberts"
+  "Modified By": "Julia Roberts",
+  "Workflow": "Electricity",
+  "Department": "Maintenance department",
+  "User Executor": "Illia Shulha",
+  "Domain": "demo"
 }
 // Allow cross-origin requests from any domain
 app.use(cors(origin = "*"));
@@ -38,6 +59,18 @@ app.get('/tasks', (req, res) => {
   console.log("dn is " + domain + ' key is ' + api_key)
   if(domain == 'demo' && api_key == "123456"){
     res.send(tasks)
+  } else {
+    res.send(null)
+  }
+  
+});
+
+app.get('/workflows', (req, res) => {
+  const domain = req.query.domainName
+  const api_key = req.query.api_key
+  console.log("dn is " + domain + ' key is ' + api_key)
+  if(domain == 'demo' && api_key == "123456"){
+    res.send(workflows)
   } else {
     res.send(null)
   }
@@ -74,6 +107,21 @@ app.post('/add_task', (req, res) => {
   })
   res.send(200)
 })
+
+
+async function sendDataToWebhook(dataToSend) {
+
+  try {
+    webhookURL = "https://webhooks.creatio.com/webhooks/e7c06359-eb12-4322-bd51-f4b75b074d4e"
+    const response = await axios.post(webhookURL, dataToSend);
+    return { success: true, message: 'Data sent to webhook successfully', data: response.data };
+  } catch (error) {
+    console.error('Error sending data to webhook:', error.message);
+    return { success: false, message: 'Error sending data to webhook', error: error.message };
+  }
+}
+
+
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
