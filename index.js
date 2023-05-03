@@ -95,11 +95,11 @@ app.post('/add_task', (req, res) => {
   }
 
   // Extract the task object from the request body
-  const newTask = req.body.task;
+  const newTask = req.body.newTask;
 
+  res.send(formatTask(newTask))
 
-
-
+  /*
 
 
   tasks.tasks.push(newTask)
@@ -112,7 +112,9 @@ app.post('/add_task', (req, res) => {
     }
     console.log('JSON file updated  successfully')
   })
-  res.send(200)
+  */
+
+  //res.send(200)
 })
 
 
@@ -126,6 +128,35 @@ async function sendDataToWebhook(dataToSend) {
     console.error('Error sending data to webhook:', error.message);
     return { success: false, message: 'Error sending data to webhook', error: error.message };
   }
+}
+
+function formatTask(inputTask) {
+  const prengiID = 1773; // Replace with your constant value
+  const creatioID = "64c1e783-6566-4dcb-8b42-0f686a179a15"; // Replace with your constant value
+  const createdAt = "2023-03-19"; // Replace with your constant value
+  const lastModifiedOn = "2023-03-21"; // Replace with your constant value
+  const stage = "Planning"; // Replace with your constant value
+  const modifiedBy = "Julia Roberts"; // Replace with your constant value
+  const department = "Maintenance department"; // Replace with your constant value
+  const userExecutor = "Illia Shulha"; // Replace with your constant value
+  const domain = "demo"; // Replace with your constant value
+
+  return {
+    "Prengi ID": prengiID,
+    "Creatio ID": creatioID,
+    "Title": inputTask.title,
+    "Description": inputTask.description,
+    "Created at": createdAt,
+    "Last Modified on": lastModifiedOn,
+    "User created": inputTask.user_created,
+    "Stage": stage,
+    "Facility": inputTask.facility_code,
+    "Modified By": modifiedBy,
+    "Workflow": inputTask.workflow_code,
+    "Department": department,
+    "User Executor": userExecutor,
+    "Domain": domain
+  };
 }
 
 
