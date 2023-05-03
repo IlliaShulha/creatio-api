@@ -89,6 +89,7 @@ app.post('/add_task', (req, res) => {
   const domain = req.body.domainName
   const api_key = req.body.api_key
   
+  console.log( req.body.newTask[0])
   if(!(domain == 'demo' && api_key == "123456")){
     res.sendStatus(403)
     return
@@ -97,7 +98,7 @@ app.post('/add_task', (req, res) => {
   // Extract the task object from the request body
   const newTask = req.body.newTask;
 
-  res.send(formatTask(newTask))
+  res.send(formatTask(newTask[0]))
 
   /*
 
