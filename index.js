@@ -142,20 +142,23 @@ function formatTask(inputTask) {
   const domain = "demo"; // Replace with your constant value
 
   return {
-    "Prengi ID": prengiID,
-    "Creatio ID": creatioID,
-    "Title": inputTask.title,
-    "Description": inputTask.description,
-    "Created at": createdAt,
-    "Last Modified on": lastModifiedOn,
-    "User created": inputTask.user_created,
-    "Stage": stage,
-    "Facility": inputTask.facility_code,
-    "Modified By": modifiedBy,
-    "Workflow": inputTask.workflow_code,
-    "Department": department,
-    "User Executor": userExecutor,
-    "Domain": domain
+    "createdTask": {
+      "Prengi ID": prengiID,
+      "Creatio ID": creatioID,
+      "Title": inputTask.title,
+      "Description": inputTask.description,
+      "Created at": createdAt,
+      "Last Modified on": lastModifiedOn,
+      "User created": inputTask.user_created,
+      "Stage": stage,
+      "Facility": inputTask.facility_code,
+      "Modified By": modifiedBy,
+      "Workflow": inputTask.workflow_code,
+      "Department": department,
+      "User Executor": userExecutor,
+      "Domain": domain
+    }
+    
   };
 }
 
