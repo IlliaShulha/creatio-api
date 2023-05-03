@@ -29,23 +29,28 @@ const workflows = {
 }
 
 const newTask = {
-  "Prengi ID": 1773,
-  "Creatio ID": "64c1e783-6566-4dcb-8b42-0f686a179a15",
-  "Title": "Landscape courtyard",
-  "Description": "Design and implement a low-maintenance landscaping plan for the building's courtyard area.",
-  "Created at": "2023-03-19",
-  "Last Modified on": "2023-03-21",
-  "User created": "Isaac Newton",
-  "Stage": "Planning",
-  "Facility": "Apartment 204",
-  "Modified By": "Julia Roberts",
-  "Workflow": "Electricity",
-  "Department": "Maintenance department",
-  "User Executor": "Illia Shulha",
-  "Domain": "demo"
+    
+    "Prengi ID": 1773,
+    "Creatio ID": "64c1e783-6566-4dcb-8b42-0f686a179a15",
+    "Title": "Landscape courtyard",
+    "Description": "Design and implement a low-maintenance landscaping plan for the building's courtyard area.",
+    "Created at": "2023-03-19",
+    "Last Modified on": "2023-03-21",
+    "User created": "Isaac Newton",
+    "Stage": "Planning",
+    "Facility": "Apartment 204",
+    "Modified By": "Julia Roberts",
+    "Workflow": "Electricity",
+    "Department": "Maintenance department",
+    "User Executor": "Illia Shulha",
+    "Domain": "demo"
+  
+  
 }
+
+
 // Allow cross-origin requests from any domain
-app.use(cors(origin = "*"));
+app.use(cors({ origin: '*' }));
 app.use(bodyParser.json());
 
 // Define your routes and middleware here
@@ -56,7 +61,9 @@ const port = process.env.PORT || 3000
 app.get('/tasks', (req, res) => {
   const domain = req.query.domainName
   const api_key = req.query.api_key
+  const taskNew = req.body.newTask
   console.log("dn is " + domain + ' key is ' + api_key)
+  console.log(taskNew)
   if(domain == 'demo' && api_key == "123456"){
     res.send(tasks)
   } else {
