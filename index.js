@@ -15,15 +15,15 @@ const tasks = JSON.parse(tasksData);
 const workflows = {
   "workflows":[
     {
-      "Name": "Electricity",
-      "PrengiWorkflowID": 108
+      "Name": "Broken Window",
+      "PrengiWorkflowID": 350
     },
     {
-      "Name": "Elevators",
-      "PrengiWorkflowID": 109
+      "Name": "Stuck Elevator",
+      "PrengiWorkflowID": 456
     },{
-      "Name": "Maintenance",
-      "PrengiWorkflowID": 100
+      "Name": "HVAC needs maintenance",
+      "PrengiWorkflowID": 237
     }
   ]
 }
@@ -31,15 +31,34 @@ const workflows = {
 const facilities = {
   "facilities":[
     {
-      "Name": "Electricity",
-      "PrengiFacilityID": 108
+      "Name": "Floor 1 - Central Office",
+      "Manager": "Illia Shulha",
+      "ManagerNumber": "305-934-28-74",
+      "PrengiFacilityID": 1001
     },
     {
-      "Name": "Elevators",
-      "PrengiFacilityID": 109
-    },{
-      "Name": "Maintenance",
-      "PrengiFacilityID": 100
+      "Name": "Floor 1 - Restrooms",
+      "Manager": "Illia Shulha",
+      "ManagerNumber": "305-934-28-74",
+      "PrengiFacilityID": 1002
+    },
+    {
+      "Name": "Floor 2 - Appartment 201",
+      "Manager": "Mykhaylo Mashchenko",
+      "ManagerNumber": "305-450-44-40",
+      "PrengiFacilityID": 2001
+    },
+    {
+      "Name": "Floor 2 - Appartment 202",
+      "Manager": "Mykhaylo Mashchenko",
+      "ManagerNumber": "305-450-44-40",
+      "PrengiFacilityID": 2002
+    },
+    {
+      "Name": "Floor 2 - Appartment 203",
+      "Manager": "Mykhaylo Mashchenko",
+      "ManagerNumber": "305-450-44-40",
+      "PrengiFacilityID": 2003
     }
   ]
 }
@@ -77,9 +96,9 @@ const port = process.env.PORT || 3000
 app.get('/tasks', (req, res) => {
   const domain = req.query.domainName
   const api_key = req.query.api_key
-  const taskNew = req.body.newTask
+  
   console.log("dn is " + domain + ' key is ' + api_key)
-  console.log(taskNew)
+  
   if(domain == 'demo' && api_key == "123456"){
     res.send(tasks)
   } else {
@@ -208,6 +227,10 @@ app.get('/uploadTasks', (req, res) => {
 
   
 
+})
+
+app.get('/alltasks', (req, res) => {
+  res.send(tasks)
 })
 
 app.listen(port, () => {
